@@ -1,0 +1,23 @@
+<!-- products list -->
+<div class="grid">
+<div *ngIf="loading" class="text-center text-sm text-red-600 font-extrabold">Loading products... </div>
+<div *ngIf="error" class="text-center text-sm text-red-600 font-extrabold">Something went wrong ! Please Check !</div>
+<div *ngFor="let item of products" class="product-center container">
+     <div class="product-item">
+          <div class="overlay">
+            <div class="product-thumb">
+              <img src="{{item.images[0]}}" alt="{{item.alt}}" />
+            </div>
+          </div>
+          <div class="product-info">
+            <span>{{item.title}}</span>
+            <a>{{item.category}}</a>
+            <h4>{{item.price | currency: 'GEL '}}</h4>
+          </div>
+          <ul class="icons">
+            <li routerLink="/details/{{item.id}}"><i class="bx bx-search"></i></li>
+            <li (click)="addtocart(item)"><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+</div>
+</div>

@@ -1,0 +1,53 @@
+ <!-- Cart Items -->
+  <div class="container cart" *ngIf="productItem.length !=0" >
+     <table>
+        <tr>
+           <th>Product</th>
+           <th>Quantity</th>
+           <th>Subtotal</th>
+        </tr>
+        <tr *ngFor="let item of productItem">
+          <td>
+            <div class="cart-info">
+              <img src="{{item.images[0]}}" alt="{{ item.alt}}" />
+              <div>
+                <p>{{item.title}}</p>
+                <span>Price: {{item.price | currency: 'GEL '}}</span> <br />
+                <a (click) ="removeItem(item)" >remove</a>
+              </div>
+            </div>
+          </td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.total | currency: 'GEL '}}</td>
+        </tr>
+       </table>
+       <div class="total-price">
+          <table>
+            <tr>
+              <td>Grand Total</td>
+              <td>Gel {{grandTotal}}</td>
+            </tr>
+          </table>
+          <div class="flex justify-around ">
+          <button class="bg-red-600 hover:bg-red-700 px-3 py-2  rounded text-white font-bold  capitalize text-xl" (click)="emptyCartItem()">Empty Cart</button>
+          <button routerLink="/list" class="bg-green-500 hover:bg-green-800 px-3 py-2  rounded text-white font-bold  capitalize text-xl mr-[2rem] ml-[2rem]">Shop More</button>
+          <button class="bg-green-600 hover:bg-green-900 px-3 py-2  rounded text-white font-bold  capitalize text-xl" (click)="buyClick()">Buy Now</button>
+          </div>
+        </div>
+</div>
+
+<div *ngIf="productItem.length === 0" class="container">
+          <h1 class="uppercase text-2xl font-bold">my cart </h1>
+     <div class="empty-div">
+         <div class="img-div">
+             <img src="../../../../assets/img/cart.jpg" alt="empty-cart">
+         </div>
+          <div class="text-div mb-[4rem]">
+               <span class="pl-[2.5rem] text-lg  font-black capitalize">your cart is empty</span>
+               <div class="text-lg  font-black capitalize">Add some product to it now</div>
+               <div class="pl-[2rem]">
+                    <button routerLink="/list" class="bg-green-600 hover:bg-green-900 px-3 py-2 mt-4 md:mt-8 ml-0 md:ml-6 rounded text-white font-bold text-base capitalize btn">shop now</button>
+               </div>
+          </div>
+     </div>
+</div> 

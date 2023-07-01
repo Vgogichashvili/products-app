@@ -1,0 +1,71 @@
+.red{
+     border:3px solid red;
+ }
+ .green{
+     border: 3px solid rgb(99, 248, 99);
+ }
+ 
+  .div{
+     font-size:16px;
+     color:red;
+  }
+  .register-form {
+     padding: 5rem 0;
+     max-width: 50rem;
+     margin: 5rem auto;
+   }
+   
+   .register-form form {
+     display: flex;
+     flex-direction: column;
+   }
+   .register-form form button {
+     outline: none;
+     border: none;
+     font-size: 1.6rem;
+     padding: 1rem 3rem;
+     background-color: var(--green);
+     color: white;
+     cursor: pointer;
+   }
+   .register-form form button:hover{
+     background-color: rgb(5, 63, 5);
+   }
+//    .login-form form h1 {
+//      margin-bottom: 1rem;
+//    }
+//    .login-form form p {
+//      margin-bottom: 2rem;
+//    }
+//    .login-form form input {
+//      border: 1px solid #ccc;
+//      outline: none;
+//      padding: 1.5rem 0;
+//      text-indent: 1rem;
+//      font-size: 1.6rem;
+//      margin-bottom: 2rem;
+//      border-radius: 0.5rem;
+//      margin-left: 1rem;
+//    }
+   
+   
+//    .login-form form .buttons {
+//      margin-top: 1rem;
+//    }
+   
+//    .login-form form button {
+//      outline: none;
+//      border: none;
+//      font-size: 1.6rem;
+//      padding: 1rem 3rem;
+//      margin-right: 1.5rem;
+//      background-color: var(--green);
+//      color: white;
+//      cursor: pointer;
+//    }
+   
+//    .login-form form p a {
+//      color: dodgerblue;
+//    }
+
+   

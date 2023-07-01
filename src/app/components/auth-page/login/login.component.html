@@ -1,0 +1,49 @@
+  <!-- Login -->
+  <div class="container">
+     <div class="login-form">
+       <form  [formGroup]="loginForm">
+         <h1 class="text-green-700 text-4xl font-semibold my-4">Login</h1>
+         <p class="mb-4 mt-[1rem]  text-xl font-normal text-black">
+           Already have an account? Login in or
+           <a routerLink="/register"> Create an account</a>
+         </p>
+<!-- username -->
+     <div formGroupName="userDetails" class="mb-[1rem] mt-[1rem]">
+          <label for="userName">UserName</label>
+          <input type="text" name="userName" placeholder="user name" formControlName="username"
+          class="mt-[1rem] w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm">
+     </div>
+<!-- password -->
+         <div formGroupName="userDetails" class="mb-[1rem]">
+          <label for="password" >Password</label>
+          <input  [type]="isPasswordVisible ? 'text' : 'password'" name="password" placeholder="password" formControlName="password"
+          class="mt-[1rem] w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm">
+     </div>
+         <label class="text-[14px]">
+           <input
+             type="checkbox"
+             name="show"
+             class="mt-[1rem] mb-[2rem]"
+             (change)="showPassword()"/>
+           Show password
+         </label>
+
+         <p class="mb-4   text-xl font-normal text-black">
+           By creating an account you agree to our
+           <a href="#">Terms & Privacy</a>.
+         </p>
+<!-- login button -->
+         <div class="buttons">
+           <button type="button" class="cancelbtn" routerLink="/">Cancel</button>
+           <button type="submit" class="signupbtn"  (click)="onSubmit()">Login</button>
+<!-- google button -->
+           <button type="button">
+               <div class="gogl-btn">
+                    <i class="fab fa-google"></i>
+                    <a href="https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&osid=1&passive=1209600&service=mail&ifkv=AQMjQ7SEl5kY_YKi7wxw4TS2Iybcps6rKgwePh3M1XAdjZF-IhB8iqi_APW9oN6ts7f7tAlmatY5LQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Log in with google</a>
+               </div>
+          </button>
+         </div>
+       </form>
+     </div>
+   </div>

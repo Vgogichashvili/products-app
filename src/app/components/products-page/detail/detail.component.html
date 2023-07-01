@@ -1,0 +1,5 @@
+
+<app-main-detail  [itemProduct]="itemProduct$ | async"
+                              [loading]="loading$ | async"
+                              [error]="error$ | async"
+                              (addToCartClicked)="addToCart($event)"></app-main-detail>

@@ -1,0 +1,8 @@
+<app-main-search [categoryList]="categoryList$ | async"
+                              (searchClick)="search($event)">
+</app-main-search>
+<app-main-list [products]="productsList$ | async"
+                         [loading]="loading$ | async"
+                         [error]="error$ | async"
+                         (addToCartClick)="addToCart($event)">
+</app-main-list>

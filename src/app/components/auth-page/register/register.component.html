@@ -1,0 +1,96 @@
+<div class="container" >
+     <div class="register-form">
+         <form [formGroup]="registerForm">
+             <h2 class="text-green-700 text-3xl font-semibold my-4">Register</h2>
+             <p class="mb-4 capitalize  text-xl font-normal text-black">create your account, it's free and only take a minute</p>
+                 <!-- first name -->
+                 <div  class="mb-[1rem]">
+                     <input formControlName="firstName"
+                             placeholder="First name*"
+                             type="text"
+                             class=" w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm"
+                             [class.red]="registerForm.get('firstName')?.invalid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)"
+                             [class.green]="!registerForm.get('firstName')?.invalid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)">
+                     <div class="text-[16px] text-red-700"  *ngIf="registerForm.get('firstName')?.invalid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)">
+                         <div *ngIf="registerForm.get('firstName').hasError('required')">First Name is required</div>
+                         <div *ngIf="registerForm.get('firstName').hasError('minlength')">First Name should have at least 3 characters</div>
+                         <div *ngIf="registerForm.get('firstName').hasError('maxlength')">First Name should have at most 9 characters</div>
+                     </div>
+                 </div>
+                 <!-- last name -->
+                 <div  class="mb-[1rem]">
+                     <input formControlName="lastName" 
+                             placeholder="Last name*"
+                             type="text"
+                             class=" w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm"
+                             [class.red]="registerForm.get('lastName')?.invalid && (registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched)"
+                             [class.green]="!registerForm.get('lastName')?.invalid && (registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched)">
+                         <div class="text-[16px] text-red-700"  *ngIf="registerForm.get('lastName')?.invalid && (registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched)">
+                              <div *ngIf="registerForm.get('lastName').hasError('required')">Last Name is required</div>
+                              <div *ngIf="registerForm.get('lastName').hasError('minlength')">Last Name should have at least 3 characters</div>
+                              <div *ngIf="registerForm.get('lastName').hasError('maxlength')">Last Name should have at most 20 characters</div>
+                          </div>
+             </div>
+ 
+             <!-- email -->
+             <div class="mb-[1rem]">
+                     <input formControlName="email"
+                             placeholder="Email*"
+                             type="email"
+                             class=" w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm"
+                             [class.red]="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)"
+                             [class.green]="!registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                             <div class="text-[16px] text-red-700"  *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                                  <div *ngIf="registerForm.get('email').hasError('required')">Email is required</div>
+                                  <div *ngIf="registerForm.get('email').hasError('email')">Invalid email format</div>
+                             </div>
+                             </div>
+             <!-- password -->
+             <div class="mb-[1rem]">
+                         <input formControlName="password" 
+                                 type="password"
+                                 placeholder="password*"
+                                 class=" w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm"
+                                 [class.red]="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
+                                 [class.green]="!registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+                          <div class="text-[16px] text-red-700" *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+                              <div *ngIf="registerForm.get('password').hasError('required')">Password is required</div>
+                              <div *ngIf="registerForm.get('password').hasError('minlength')">Password should have at least 6 characters</div>
+                              <div *ngIf="registerForm.get('password').hasError('maxlength')">Password should have at most 20 characters</div>
+                              <div *ngIf="registerForm.get('password').hasError('invalidPassword')">Password must contain at least one uppercase letter and one symbol</div>
+                          </div>
+                         </div>
+             <!-- phone number -->
+             <div class="mb-[1rem]">
+                     <input formControlName="tel" 
+                                 placeholder="Mobile Phone*"
+                                 type="number"
+                                 class=" w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm"
+                                 [class.red]="registerForm.get('tel')?.invalid && (registerForm.get('tel')?.dirty || registerForm.get('tel')?.touched)"
+                                 [class.green]="!registerForm.get('tel')?.invalid && (registerForm.get('tel')?.dirty || registerForm.get('tel')?.touched)">
+                              <div class="text-[16px] text-red-700"  *ngIf="registerForm.get('tel')?.invalid && (registerForm.get('tel')?.dirty || registerForm.get('tel')?.touched)">
+                                  <div *ngIf="registerForm.get('tel').hasError('required')">Mobile Phone is required</div>
+                                  <div *ngIf="registerForm.get('tel').hasError('pattern')">Invalid phone format</div>
+                              </div>
+                             </div>
+             <!-- age -->
+             <div class="mb-[1rem]">
+                         <input type="number"
+                                 formControlName="age"
+                                 placeholder="age*" 
+                                 class=" w-full rounded-md border border-slate-300 text-lg p-[1rem] bg-transparent outline-green-600 shadow-sm"
+                                 [class.red]="registerForm.get('age')?.invalid && (registerForm.get('age')?.dirty || registerForm.get('age')?.touched)"
+                                 [class.green]="!registerForm.get('age')?.invalid && (registerForm.get('age')?.dirty || registerForm.get('age')?.touched)">
+                                 <div class="text-[16px] text-red-700"  *ngIf="registerForm.get('age')?.invalid && (registerForm.get('age')?.dirty || registerForm.get('age')?.touched)">
+                                         Age is required!
+                                 </div>
+             </div>
+             <!-- Sign up / submit button -->
+             <button type="submit" (click)="onSubmit()"
+                 >Register</button><br>
+             <p class="text-xl my-2">Already have a account? <a routerLink="/login" class="text-blue-600">Login</a></p>
+             </form>
+     </div>
+ </div>
+  
+ 

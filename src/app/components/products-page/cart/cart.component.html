@@ -1,0 +1,4 @@
+<app-main-cart [productItem]="productItem$ | async"
+[grandTotal]="grandTotal"
+(removeItemClick)="removeItem($event)"
+(emptyCartItemClick)="emptyCartItem()"></app-main-cart>

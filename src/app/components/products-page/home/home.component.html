@@ -1,0 +1,75 @@
+<app-carousel [images]="images"
+                       
+></app-carousel>
+
+<!-- Categories section -->
+<section class="section category">
+     <div class="cat-center">
+       <div class="cat">
+         <img src="../../../../assets/img/wom-clo.jpg" alt="wom-clo" />
+         <div>
+           <p routerLink="/list">WOMEN'S WEAR</p>
+         </div>
+       </div>
+       <div class="cat">
+          <img src="../../../../assets/img/men-clo.jpg" alt="men-clo"/>
+          <div>
+            <p routerLink="/list">MEN'S WEAR</p>
+          </div>
+        </div>
+       <div class="cat">
+         <img src="../../../../assets/img/laptops.jpg" alt="laptops" />
+         <div>
+           <p routerLink="/list">Technique</p>
+         </div>
+       </div>
+     </div>
+</section>
+
+<!-- New Arrivals -->
+
+<section class="section new-arrival" *ngIf="productsList$">
+     <div class="title">
+       <h1>NEW ARRIVALS</h1>
+       <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+     </div>
+
+     <div class="product-center">
+          <div class="product-item" *ngFor="let item of productsList$ | async">
+               <div class="overlay">
+                    <a href="productDetails.html" class="product-thumb">
+                      <img src="{{item.images[0]}}" alt="{{item.alt}}" />
+                    </a>
+                  </div>
+                  <div class="product-info">
+                    <span>{{item.category}}</span>
+                    <a routerLink="/details/{{item.id}}">{{item.title}}</a>
+                    <h4>{{item.price | currency: 'GEL '}}</h4>
+                  </div>
+                  <ul class="icons">
+                    <li routerLink="/details/{{item.id}}"><i class="bx bx-search"></i></li>
+                    <li (click)="addToCart(item)" routerLink="/cart"><i class="bx bx-cart"></i></li>
+                  </ul>
+          </div>
+     </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact">
+     <div class="row">
+       <div class="col">
+         <h2>EXCELLENT SUPPORT</h2>
+         <p>We love our customers and they can reach us any time
+         of day we will be at your service 24/7</p>
+         <a routerLink="" class="btn btn-1">Contact</a>
+       </div>
+       <div class="col">
+         <form action="">
+           <div>
+             <input type="email" placeholder="Email Address">
+              <a (click)="sendClick()">Send</a>
+           </div>
+         </form>
+       </div>
+     </div>
+   </section>

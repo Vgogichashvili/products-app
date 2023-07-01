@@ -1,0 +1,175 @@
+
+.carousel-container{
+     position: relative;
+     margin:auto;
+     text-align: center;
+     width: 800px;
+     border-radius: 15px;
+     box-shadow: 0 6px 16px #dce1e1;
+}
+.carousel-container img {
+     display: none;
+     border-radius: 15px;
+}
+.carousel-container img.image-active{
+     display: block;
+     width:100%;
+     height: 400px;
+}
+
+.carousel-dot-container{
+     position: absolute;
+     right: 0;
+     left:0;
+     bottom: 0;
+     display: flex;
+     justify-content: center;
+     padding: 0;
+     margin-bottom: 1rem;
+}
+.dot{
+     cursor: pointer;
+     height: 13px;
+     width:13px;
+     margin: 0 5px;
+     background-color: #fff;
+     border-radius: 50%;
+     display: inline-block;
+     transition: opacity 0.6s ease;
+     opacity: 0.5;
+}
+.active,
+.dot:hover{
+     opacity: 1;
+}
+
+// image transition fade effect
+
+.fade{
+     animation-name: fade;
+     animation-duration: 1.5s;
+}
+@keyframes fade {
+     from {
+          opacity: 0.4;
+     }
+     to{
+          opacity: 1;
+     }
+}
+.btn-carousel {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 15%;
+     padding: 0;
+     color:#fff;
+     text-align: center;
+     background: 0 0;
+     border: 0;
+     cursor: pointer;
+}
+.btn-prev{
+     left:0;
+}
+.btn-next{
+     right: 0;
+}
+.icon-carousel{
+     color:#fff;
+     opacity: 0.5;
+     transition: all 0.15s ease;
+}
+.icon-carousel:hover{
+     opacity: 0.9;
+}
+.icon-carousel:active{
+     opacity: 0.5;
+}
+.icon-next,
+.icon-prev{
+     font-size: 35px;
+}
+
+/* 
+=================
+Hero Area
+=================
+*/
+
+.text {
+  position: absolute;
+  top: 7%;
+  left: 30rem;
+  margin-top:4rem;
+  transition: all 1000ms ease-in-out;
+  color: black
+}
+
+.text h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+ .text p {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.text .hero-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  background-color: var(--green);
+  color: white;
+}
+
+/*
+======================
+Text Media Query
+======================
+*/
+@media  screen and (max-width: 1500px) {
+     .text {
+       left: 7rem;
+     }
+   }
+   @media  screen and (max-width: 1029px) {
+     .carousel-container{
+          width: auto;
+     }
+   }
+   @media  screen and (max-width: 999px) {
+     .text{
+       top: 15%;
+     }
+   
+   }
+    
+   @media  screen and (max-width: 702px){
+     .carousel-container{
+          width:500px;
+     }
+   }
+   @media  screen and (max-width: 567px) {
+     .text-h1 {
+       font-size: 2rem;
+     }
+     .text-p {
+       font-size: 1.3rem;
+     }
+   }
+   @media  screen and (max-width: 520px){
+     .carousel-container{
+          width:400px;
+     }
+   }
+   @media  screen and (max-width: 420px){
+     .carousel-container{
+          width:300px;
+     }
+   }
